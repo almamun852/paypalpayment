@@ -14,5 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::post("payment/add-funds/paypal",'PaymentController@payWithpaypal');
+	
+Route::get('payment', 'PaymentController@index');
+Route::post('charge', 'PaymentController@charge');
+Route::get('paymentsuccess', 'PaymentController@payment_success');
+Route::get('paymenterror', 'PaymentController@payment_error');
